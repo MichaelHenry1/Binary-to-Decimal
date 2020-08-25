@@ -1,0 +1,51 @@
+<style>
+  
+  input{
+    background-color:blue;
+    position:absolute;
+    top: 45%;
+    font-size: 50px;
+    left:45%;
+    border: 5px black solid;
+  }
+  body{
+    
+    background-image: linear-gradient(to right, blue, violet); 
+  }
+  h2{
+    
+    font-size:60px;
+    
+  }
+</style>
+
+<center>
+  <h1>Welcome To The Binary To Decimal Calculator</h1>
+<input type='button' id='but' value='START' onClick='Start()'>
+<h2 id='ans'></h2>
+</center>
+
+<script>
+
+  function Start(){
+     var BNum = document.getElementById('but').innerHTML = prompt('How Many Numbers In Your Binary Number')
+    var answer = 0;
+      var binary = [];
+      
+      for(var i = 0; i < parseInt(BNum); i++){
+    
+    binary.push(parseInt(prompt("1 or 0")))
+    console.log(binary)
+  }
+ 
+  for(var i = binary.length - 1; i >= 0; i--){
+    
+    binary[i] = binary[i] * 2 ** (binary.length - i - 1);
+    
+    answer += binary[i];
+    
+
+  }
+    document.getElementById('ans').innerHTML = 'Your answer is ' + answer; 
+  }
+</script>
